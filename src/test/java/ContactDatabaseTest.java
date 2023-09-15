@@ -8,17 +8,10 @@ import com.example.ContactDatabase;
 
 public class ContactDatabaseTest {
 
-    private ContactDatabase db;
-
-    @BeforeEach
-    public void setUp() {
-        db = new ContactDatabase();
-        db.createTable();
-    }
-
     @Test
     public void testAddAndRetrieveContact() {
-        // Add a contact
+        ContactDatabase db = new ContactDatabase();
+        db.createTable();
         db.addContact("Alice", "1112223333");
 
         // Retrieve the contact and check the phone number
@@ -28,6 +21,9 @@ public class ContactDatabaseTest {
 
     @Test
     public void testRetrieveNonexistentContact() {
+        ContactDatabase db = new ContactDatabase();
+        db.createTable();
+
         // Try to retrieve a contact that doesn't exist
         String phone = db.getContactByName("Bob");
         assertNull(phone);
@@ -35,6 +31,9 @@ public class ContactDatabaseTest {
 
     @Test
     public void testAddAndRetrieveMultipleContacts() {
+        ContactDatabase db = new ContactDatabase();
+        db.createTable();
+        
         // Add multiple contacts
         db.addContact("Charlie", "4445556666");
         db.addContact("David", "7778889999");
