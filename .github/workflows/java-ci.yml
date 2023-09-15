@@ -11,7 +11,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          distribution: 'oracle'
+          distribution: 'microsoft'
       - name: Build with Maven  
         run: mvn --batch-mode --update-snapshots package
       - name: Test with Maven
