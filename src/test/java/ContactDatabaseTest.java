@@ -1,7 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.example.ContactDatabase;
@@ -33,7 +32,7 @@ public class ContactDatabaseTest {
     public void testAddAndRetrieveMultipleContacts() {
         ContactDatabase db = new ContactDatabase();
         db.createTable();
-        
+
         // Add multiple contacts
         db.addContact("Charlie", "4445556666");
         db.addContact("David", "7778889999");
